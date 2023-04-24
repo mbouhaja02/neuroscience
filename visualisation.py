@@ -34,9 +34,9 @@ def plot_connection_matrix_2d(matrix,positions):
 mat = scipy.io.loadmat('Coactivation_matrix.mat')
 Coactivation_matrix=mat['Coactivation_matrix']
 Coordinates=mat['Coord']
-#mat = scipy.io.loadmat('GroupAverage_rsfMRI_matrix.mat')
-#Coactivation_matrix=mat['GroupAverage_rsfMRI']
-#Coordinates=mat['Coord']
+mat = scipy.io.loadmat('GroupAverage_rsfMRI_matrix.mat')
+Coactivation_matrix=mat['GroupAverage_rsfMRI']
+Coordinates=mat['Coord']
 print('Nombre de sommets total : '+str(Coactivation_matrix.shape[0]))
 
 Nmax=50
@@ -46,4 +46,5 @@ Coactivation_matrix=Coactivation_matrix[:Nmax,:Nmax]
 Coordinates=Coordinates[:Nmax,:]
 plt.close('all')
 plot_connection_matrix_3d(Coactivation_matrix,Coordinates)
-#plot_connection_matrix_2d(Coactivation_matrix,Coordinates)
+plot_connection_matrix_2d(Coactivation_matrix,Coordinates)
+plt.show()
