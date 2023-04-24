@@ -39,7 +39,7 @@ Coactivation_matrix=mat['GroupAverage_rsfMRI']
 Coordinates=mat['Coord']
 print('Nombre de sommets total : '+str(Coactivation_matrix.shape[0]))
 
-Nmax=50
+Nmax=4
 Nmax=min(Nmax,Coactivation_matrix.shape[0])
 print('Nombre de sommets conserves: '+str(Nmax))
 Coactivation_matrix=Coactivation_matrix[:Nmax,:Nmax]
@@ -47,4 +47,6 @@ Coordinates=Coordinates[:Nmax,:]
 plt.close('all')
 plot_connection_matrix_3d(Coactivation_matrix,Coordinates)
 plot_connection_matrix_2d(Coactivation_matrix,Coordinates)
-plt.show()
+print(Coactivation_matrix)
+print(len(Coactivation_matrix))
+#plt.show()
